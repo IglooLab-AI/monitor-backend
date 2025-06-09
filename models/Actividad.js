@@ -6,7 +6,7 @@ const actividadSchema = new mongoose.Schema({
   keylogs: [String],
   clicks: Number,
   aplicaciones: [String],
-  screenshot: String, // base64 o URL si las estás guardando
+  screenshot: String,
   timestamp: { type: Date, default: Date.now }
 });
 
