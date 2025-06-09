@@ -1,3 +1,4 @@
+console.log('🚀 Server.js está corriendo, versión correcta');
 require('dotenv').config();
 
 const mongoose = require('mongoose');
