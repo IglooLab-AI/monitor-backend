@@ -14,7 +14,6 @@ mongoose.connect(uri, {
 
 const express = require('express');
 const cors = require('cors');
-const mongoose = require('mongoose');
 const Actividad = require('./models/Actividad');
 
 const app = express();
