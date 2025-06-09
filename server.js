@@ -1,3 +1,17 @@
+require('dotenv').config(); // 👈 Asegúrate de que esta línea esté al inicio
+
+const mongoose = require('mongoose');
+
+// Usa la variable de entorno MONGODB_URI
+const uri = process.env.MONGODB_URI;
+
+mongoose.connect(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log('✅ Conectado a MongoDB Atlas'))
+.catch(err => console.error('❌ Error de conexión:', err));
+
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
