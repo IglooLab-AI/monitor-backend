@@ -1,10 +1,18 @@
 const express = require('express');
+const cors = require('cors');
 const mongoose = require('mongoose');
-const Actividad = require('./models/Actividad'); // ✅ IMPORTANTE
-const app = express();
-const port = process.env.PORT || 3000;
+const Actividad = require('./models/Actividad');
 
+const app = express();
+const port = process.env.PORT || 3001;
+
+// ——— Aquí:
+app.use(cors({
+  origin: ['http://localhost:3000']   // permite sólo tu React en local
+  // origin: '*'                       // o permitir todos (para producción, no recomendado)
+}));
 app.use(express.json());
+
 
 // Conexión MongoDB Atlas
 const uri = 'mongodb+srv://IglooLab:Igl00l48*.@igloobd-teramind.luyjrq6.mongodb.net/monitorDB?retryWrites=true&w=majority&appName=IglooBD-Teramind';
